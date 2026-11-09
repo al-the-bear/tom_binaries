@@ -1,0 +1,61 @@
+Licence notice for tom_binaries
+
+This repository holds compiled programs, not source code. Each program is
+built from an open-source package and is licensed under that package's
+licence, which is in the package's LICENSE file in its source repository:
+
+| Binary (tom/<platform>/)        | Package                     | Source repository                                  | Licence      |
+| ------------------------------- | --------------------------- | -------------------------------------------------- | ------------ |
+| buildkit, bk, findproject       | tom_build_kit               | https://github.com/al-the-bear/tom_basics          | BSD 3-Clause |
+| testkit, tk                     | tom_test_kit                | https://github.com/al-the-bear/tom_devops          | BSD 3-Clause |
+| issuekit, ik                    | tom_issue_kit               | https://github.com/al-the-bear/tom_devops          | BSD 3-Clause |
+| tom                             | tom_build_cli               | https://github.com/al-the-bear/tom_devops          | BSD 3-Clause |
+| astgen                          | tom_ast_generator           | https://github.com/al-the-bear/tom_d4rt            | BSD 3-Clause |
+| d4rtgen                         | tom_d4rt_generator          | https://github.com/al-the-bear/tom_d4rt            | BSD 3-Clause |
+| dcli                            | tom_d4rt_dcli               | https://github.com/al-the-bear/tom_d4rt            | BSD 3-Clause |
+| dclie                           | tom_dcli_exec               | https://github.com/al-the-bear/tom_d4rt            | BSD 3-Clause |
+| reflector, reflection_analyzer  | tom_reflector               | https://github.com/al-the-bear/tom_reflection      | BSD 3-Clause |
+| reflectiongenerator             | tom_reflection_generator    | https://github.com/al-the-bear/tom_reflection      | BSD 3-Clause (Dart authors, derived from reflectable) |
+| tom_bs                          | tom_vscode_bridge           | https://github.com/al-the-bear/tom_vscode          | BSD 3-Clause |
+| validate_codespecs              | tom_specs_clitool           | https://github.com/al-the-bear/tom_ai_build        | BSD 3-Clause |
+| marktext (launcher script)      | -                           | this repository                                    | BSD 3-Clause (below) |
+
+Each program also contains the code of the packages it depends on (for
+example tom_d4rt, MIT; the Dart runtime and pub.dev packages, each under its
+own licence). Their licences are those packages' licences; a package's
+dependencies are listed in its pubspec.yaml in the source repository.
+
+sqlite_vec/ holds the loadable extension of sqlite-vec by Alex Garcia
+(https://github.com/asg017/sqlite-vec), dual-licensed MIT or Apache-2.0; the
+licence texts are in sqlite_vec/LICENSE-MIT and sqlite_vec/LICENSE-APACHE.
+
+The scripts of this repository (the *_pull_executables, commit_and_push and
+marktext launcher scripts) are licensed under the BSD 3-Clause licence:
+
+Copyright (c) 2024-2026, Peter Nicolai Alexis Kyaw
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

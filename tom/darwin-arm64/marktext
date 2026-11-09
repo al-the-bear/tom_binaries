@@ -1,0 +1,17 @@
+#!/bin/bash
+# Launch MarkText — wrapper for the .app bundle
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ $# -eq 0 ]]; then
+  open "$SCRIPT_DIR/MarkText.app"
+else
+  # Resolve relative paths to absolute for open command
+  ARGS=()
+  for arg in "$@"; do
+    if [[ -e "$arg" ]]; then
+      ARGS+=("$(cd "$(dirname "$arg")" && pwd)/$(basename "$arg")")
+    else
+      ARGS+=("$arg")
+    fi
+  done
+  open -a "$SCRIPT_DIR/MarkText.app" "${ARGS[@]}"
+fi

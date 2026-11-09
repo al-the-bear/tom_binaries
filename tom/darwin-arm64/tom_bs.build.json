@@ -1,0 +1,14 @@
+{
+  "format": "tom-bs-build",
+  "formatVersion": 1,
+  "platform": "darwin-arm64",
+  "builtAt": "2026-11-09T14:45:53.506Z",
+  "publishedAt": "2026-11-09T14:49:12.282Z",
+  "builtOn": "Alexiss-MacBook-Pro.local",
+  "version": "1.0.0",
+  "build": 46,
+  "commit": "52d0573",
+  "versionerTime": "2026-11-09T14:45:53.506987Z",
+  "dart": "3.13.7",
+  "bridgeSourceHash": "a6a1a6e1384118bcdb10b3a126212a5af3c4e172310dd61d5538456aae98f7b7"
+}

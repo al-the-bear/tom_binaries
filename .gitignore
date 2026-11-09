@@ -1,0 +1,23 @@
+# Exclude large app bundles (exceed GitHub 100MB file limit)
+tom/darwin-arm64/MarkText.app/
+
+# Retired tools — never commit their binaries. `d4rt` lost its source project
+# (tom_d4rt_tool) on 2026-02-25; `dcli` carries the interpreter. A stray build
+# left in the tree was swept in by tom_push_binaries' `git add -A` (c1e859d),
+# so the ignore is what keeps a refresh from bringing it back.
+tom/*/d4rt
+tom/*/d4rt.exe
+
+# Binaries without a public source, removed when the repository became public
+# (2026-11-09): core_bs (its source project is gone), test_bot and d4rtrun.b
+# (example/test builds), dart_editor_bundler (tom_forge, a private repository;
+# run it from source with `dart run`). Every binary here must come from a
+# public package that LICENSE names.
+tom/*/core_bs
+tom/*/core_bs.exe
+tom/*/test_bot
+tom/*/test_bot.exe
+tom/*/d4rtrun.b
+tom/*/d4rtrun.b.exe
+tom/*/dart_editor_bundler
+tom/*/dart_editor_bundler.exe

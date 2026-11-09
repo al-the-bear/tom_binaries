@@ -20,7 +20,7 @@ and the two binaries the VS Code extension carries:
 | File | What |
 | ---- | ---- |
 | `tom_bs[.exe]` | the DartScript bridge (`tom_ai/vscode/tom_vscode_bridge`) |
-| `tom_bs.build.json` | its build stamp: the versioner stamp it prints on start (version, build, commit), build time, host, hash of the bridge sources it was built from |
+| `tom_bs.build.json` | its build stamp: the versioner stamp it prints on start (version, build, commit), build time, platform, hash of the bridge sources it was built from (no host: the repository is public) |
 | `validate_codespecs[.exe]` | CodeSpecs validation (`tom_ai/ai_build/tom_specs_clitool`) |
 | `validate_codespecs.build.json` | its build stamp: the hash of the source it was built from, clitool commit, build time |
 
@@ -31,8 +31,11 @@ folder's files here, commits exactly those files and pushes, so the folder
 holds the latest build of that platform's host. The multi-platform VSIX
 scripts take them from here: `create_currentbinaries_vsix` (this host's built
 now, the others as they are) and `create_fleetcompiled_vsix` (every fleet
-platform built now on its own host). `npm run binaries:report` in the
-extension says, per platform, which binaries are older than the sources. See
+platform built now on its own host), and `create_layerbinaries_vsix`, which
+builds the VSIX from the extension's source with every platform's binaries
+from here and needs no Dart SDK (without a checkout of this repository it
+clones it). `npm run binaries:report` in the extension says, per platform,
+which binaries are older than the sources. See
 `tom_ai/vscode/tom_vscode_extension/README.md` § Private distribution.
 
 ## sqlite-vec extension

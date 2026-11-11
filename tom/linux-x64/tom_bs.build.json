@@ -1,0 +1,13 @@
+{
+  "format": "tom-bs-build",
+  "formatVersion": 1,
+  "platform": "linux-x64",
+  "builtAt": "2026-11-11T15:07:57.059Z",
+  "publishedAt": "2026-11-11T15:09:26.892Z",
+  "version": "1.0.0",
+  "build": 46,
+  "commit": "14e2a1b",
+  "versionerTime": "2026-11-11T15:07:57.059666Z",
+  "dart": "3.13.7",
+  "bridgeSourceHash": "bebf52def46a7f42b7ef402ecd571176740e4ad3f7eb2354bc364a59ea8582d0"
+}

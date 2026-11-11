@@ -2,7 +2,7 @@
   "format": "validate-codespecs-build",
   "formatVersion": 1,
   "platform": "darwin-arm64",
-  "builtAt": "2026-11-11T07:57:35.620Z",
+  "builtAt": "2026-11-11T09:11:17.934Z",
   "sourceHash": "0a8288359dd7430689733130ba5681ecd2565f8b3a93a9655e5281b601ffb648",
   "sourceFiles": 293,
   "clitool": {

@@ -11,15 +11,15 @@ code --install-extension tom-ai-extension.vsix
 | | |
 |---|---|
 | Built from | tom_vscode `ade94343bcb359b13d3f7e09ff1fb0b39859979d` |
-| Built at | 2026-11-11T17:56:06.348Z |
+| Built at | 2026-11-11T17:58:29.883Z |
 | Size | 95.9 MiB |
-| Packed by | `create_currentbinaries_vsix.sh` |
+| Packed by | `create_fleetcompiled_vsix.sh` |
 
 ## Dart binaries carried
 
 | Platform | Binaries | Build stamps |
 |---|---|---|
-| darwin-arm64 | tom_bs, validate_codespecs, spec_checks | tom_bs: 2026-11-11T17:54:10.766Z from ade9434; validate_codespecs: 2026-11-11T17:54:56.219Z from b6848658abd0; spec_checks: 2026-11-11T17:54:59.478Z from b6848658abd0 |
+| darwin-arm64 | tom_bs, validate_codespecs, spec_checks | tom_bs: 2026-11-11T17:56:36.064Z from ade9434; validate_codespecs: 2026-11-11T17:57:20.386Z from b6848658abd0; spec_checks: 2026-11-11T17:57:23.673Z from b6848658abd0 |
 | linux-x64 | tom_bs, validate_codespecs, spec_checks | tom_bs: 2026-11-11T15:07:57.059Z from 14e2a1b; validate_codespecs: 2026-11-11T15:09:12.765Z from b6848658abd0; spec_checks: 2026-11-11T15:09:17.257Z from b6848658abd0 |
 | win32-x64 | tom_bs, validate_codespecs, spec_checks | tom_bs: 2026-11-11T17:39:57.362Z from 14e2a1b; validate_codespecs: 2026-11-11T17:40:54.601Z from b6848658abd0; spec_checks: 2026-11-11T17:40:58.252Z from b6848658abd0 |
 

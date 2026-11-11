@@ -38,6 +38,17 @@ clones it). `npm run binaries:report` in the extension says, per platform,
 which binaries are older than the sources. See
 `tom_ai/vscode/tom_vscode_extension/README.md` § Private distribution.
 
+## The VS Code extension as a download
+
+The latest VSIX of the extension is not committed here (GitHub refuses files
+over 100 MiB, and every version would stay in the history): it is the asset
+`tom-ai-extension.vsix` of the release `vscode-extension-latest`,
+<https://github.com/al-the-bear/tom_binaries/releases/download/vscode-extension-latest/tom-ai-extension.vsix>.
+Every `create_*_vsix` script of the extension replaces it, and writes
+[`vscode_extension/vsix/README.md`](vscode_extension/vsix/README.md): the
+commit it was built from, size, script, and the platforms whose Dart binaries
+it carries. Install it with `code --install-extension tom-ai-extension.vsix`.
+
 ## sqlite-vec extension
 
 Tom Brain's memory store loads the [`sqlite-vec`](https://github.com/asg017/sqlite-vec)

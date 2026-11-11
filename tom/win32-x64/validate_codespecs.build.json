@@ -1,0 +1,12 @@
+{
+  "format": "validate-codespecs-build",
+  "formatVersion": 1,
+  "platform": "win32-x64",
+  "builtAt": "2026-11-11T15:11:28.995Z",
+  "sourceHash": "12158ed67877873f235141b462274961bf8a0718cd9f1d68579a94ac275ac2d0",
+  "sourceFiles": 293,
+  "clitool": {
+    "head": "b6848658abd01bbb40c9180a53d0bea7357870f7",
+    "dirty": false
+  }
+}

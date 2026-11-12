@@ -1,8 +1,16 @@
 Licence notice for tom_binaries
 
 This repository holds compiled programs, not source code. Each program is
-built from an open-source package and is licensed under that package's
-licence, which is in the package's LICENSE file in its source repository:
+built from a package and is licensed under that package's licence, which is
+in the package's LICENSE file in its source repository.
+
+What may go in (DP-204 (c), 2026-11-12): a binary may go in when its licence
+is not copyleft - BSD, MIT, Apache and the like, licences that require no
+source to be published and bind nothing the binary is combined with - whether
+its source repository is public or private; GPL and other copyleft binaries
+stay out. A private source repository is marked "(private)" below; its licence
+still applies to the binary as stated.
+
 
 | Binary (tom/<platform>/)        | Package                     | Source repository                                  | Licence      |
 | ------------------------------- | --------------------------- | -------------------------------------------------- | ------------ |
@@ -17,7 +25,7 @@ licence, which is in the package's LICENSE file in its source repository:
 | reflector, reflection_analyzer  | tom_reflector               | https://github.com/al-the-bear/tom_reflection      | BSD 3-Clause |
 | reflectiongenerator             | tom_reflection_generator    | https://github.com/al-the-bear/tom_reflection      | BSD 3-Clause (Dart authors, derived from reflectable) |
 | tom_bs                          | tom_vscode_bridge           | https://github.com/al-the-bear/tom_vscode          | BSD 3-Clause |
-| validate_codespecs              | tom_specs_clitool           | https://github.com/al-the-bear/tom_ai_build        | BSD 3-Clause |
+| validate_codespecs, spec_checks | tom_specs_clitool           | https://github.com/al-the-bear/tom_ai_build        | BSD 3-Clause |
 | marktext (launcher script)      | -                           | this repository                                    | BSD 3-Clause (below) |
 
 Each program also contains the code of the packages it depends on (for

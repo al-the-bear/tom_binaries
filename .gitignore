@@ -8,11 +8,14 @@ tom/darwin-arm64/MarkText.app/
 tom/*/d4rt
 tom/*/d4rt.exe
 
-# Binaries without a public source, removed when the repository became public
-# (2026-11-09): core_bs (its source project is gone), test_bot and d4rtrun.b
-# (example/test builds), dart_editor_bundler (tom_forge, a private repository;
-# run it from source with `dart run`). Every binary here must come from a
-# public package that LICENSE names.
+# Removed when the repository became public (2026-11-09) and kept out: core_bs
+# (its source project is gone), test_bot and d4rtrun.b (example/test builds),
+# dart_editor_bundler (tom_forge, private, BSD 3-Clause - allowed by the rule
+# below, but nothing distributes it: run it from source with `dart run`).
+# What may go in (DP-204 (c), 2026-11-12): a binary may go in when its licence is not copyleft - BSD, MIT, Apache and the like,
+# licences that require no source to be published and bind nothing the binary is combined with
+# - whether its source repository is public or private; GPL and other copyleft binaries stay out.
+# Every binary here has a row in LICENSE (package, source repository, licence).
 tom/*/core_bs
 tom/*/core_bs.exe
 tom/*/test_bot

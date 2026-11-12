@@ -23,8 +23,10 @@ and the two binaries the VS Code extension carries:
 | `tom_bs.build.json` | its build stamp: the versioner stamp it prints on start (version, build, commit), build time, platform, hash of the bridge sources it was built from (no host: the repository is public) |
 | `validate_codespecs[.exe]` | CodeSpecs validation (`tom_ai/ai_build/tom_specs_clitool`) |
 | `validate_codespecs.build.json` | its build stamp: the hash of the source it was built from, clitool commit, build time |
+| `spec_checks[.exe]` | the TomSpecs process checks (`tom_ai/ai_build/tom_specs_clitool`) |
+| `spec_checks.build.json` | its build stamp, as for `validate_codespecs` |
 
-Those four are written by the extension's from-source builds
+Those six are written by the extension's from-source builds
 (`compile_and_install.sh` / `.ps1`, `create_vsix*`, and
 `compile_and_install --binaries-only`): each build puts its host's platform
 folder's files here, commits exactly those files and pushes, so the folder
@@ -71,6 +73,16 @@ Version `0.1.9`, extracted from the upstream `*-loadable-*` release tarballs.
 The upstream licence texts (MIT or Apache-2.0, at the user's choice) are in
 `sqlite_vec/LICENSE-MIT` and `sqlite_vec/LICENSE-APACHE`.
 
+## What may go in
+
+The rule (DP-204 (c) of the Tom Secrets Manager idea, 2026-11-12): a binary
+may go in when its licence is not copyleft - BSD, MIT, Apache and the like,
+licences that require no source to be published and bind nothing the binary is
+combined with - whether its source repository is public or private; GPL and
+other copyleft binaries stay out. Every binary has a row in [LICENSE](LICENSE)
+naming its package, its source repository (a private one marked as such) and
+its licence.
+
 ## Using the binaries without Dart
 
 This repository is public so that a machine without a Dart SDK can use the
@@ -85,11 +97,12 @@ the repository became public on 2026-11-09), so a refresh replaces the files.
 ## Licence
 
 These are compiled programs; each one is licensed under the licence of the
-open-source package it is built from, which is in that package's `LICENSE`
-file in its source repository. [LICENSE](LICENSE) maps every binary to its
-package, source repository and licence (all BSD 3-Clause), names the
-bundled third-party code (sqlite-vec, MIT or Apache-2.0) and carries the BSD
-3-Clause licence of this repository's own scripts.
+package it is built from, which is in that package's `LICENSE` file in its
+source repository. None of them is under a copyleft licence (see "What may go
+in"). [LICENSE](LICENSE) maps every binary to its package, source repository
+(public or private) and licence (all BSD 3-Clause today), names the bundled
+third-party code (sqlite-vec, MIT or Apache-2.0) and carries the BSD 3-Clause
+licence of this repository's own scripts.
 
 ## Disclaimer
 

@@ -2,12 +2,12 @@
   "format": "tom-bs-build",
   "formatVersion": 1,
   "platform": "darwin-arm64",
-  "builtAt": "2026-11-11T18:52:08.670Z",
-  "publishedAt": "2026-11-11T18:52:56.211Z",
+  "builtAt": "2026-11-12T15:49:35.705Z",
+  "publishedAt": "2026-11-12T15:50:31.101Z",
   "version": "1.0.0",
   "build": 46,
-  "commit": "857d03e",
-  "versionerTime": "2026-11-11T18:52:08.670470Z",
+  "commit": "d15835e",
+  "versionerTime": "2026-11-12T15:49:35.705848Z",
   "dart": "3.13.7",
   "bridgeSourceHash": "bebf52def46a7f42b7ef402ecd571176740e4ad3f7eb2354bc364a59ea8582d0"
 }

@@ -1,0 +1,6 @@
+# Windows alias launchers (al_the_bear binwin1): cmd needs CRLF, the Git Bash
+# scripts need LF, whatever core.autocrlf a checkout has.
+*.cmd text eol=crlf
+tom/win32-x64/bk text eol=lf
+tom/win32-x64/ik text eol=lf
+tom/win32-x64/tk text eol=lf

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Alias for buildkit.exe in Git Bash (git symlinks are off on Windows checkouts).
+exec "$(dirname "$0")/buildkit.exe" "$@"

@@ -94,6 +94,12 @@ prebuilt programs: clone it (or download a platform folder) and put
 host that builds that platform; the history is not kept (it was cleared when
 the repository became public on 2026-11-09), so a refresh replaces the files.
 
+The short names `bk` (buildkit), `ik` (issuekit) and `tk` (testkit) are
+symlinks in the macOS and Linux folders. Windows checkouts have git symlinks
+off, so `win32-x64/` carries launchers instead: `bk.cmd` / `ik.cmd` / `tk.cmd`
+for cmd and PowerShell, and extensionless `bk` / `ik` / `tk` scripts for Git
+Bash.
+
 ## Licence
 
 These are compiled programs; each one is licensed under the licence of the

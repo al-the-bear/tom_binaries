@@ -26,6 +26,9 @@ still applies to the binary as stated.
 | reflectiongenerator             | tom_reflection_generator    | https://github.com/al-the-bear/tom_reflection      | BSD 3-Clause (Dart authors, derived from reflectable) |
 | tom_bs                          | tom_vscode_bridge           | https://github.com/al-the-bear/tom_vscode          | BSD 3-Clause |
 | validate_codespecs, spec_checks | tom_specs_clitool           | https://github.com/al-the-bear/tom_ai_build        | BSD 3-Clause |
+| tsm, tom_secrets_manager/bin/tsm | tom_secrets_tsm            | https://github.com/al-the-bear/tom_secrets_clients | BSD 3-Clause |
+| tom_secrets_manager/bin/tom_secrets_service, tom_secrets_manager/lib/ | tom_secrets_service | https://github.com/al-the-bear/tom_secrets_manager | BSD 3-Clause (its native library: tom_pqc, BSD 3-Clause, over mlkem-native and mldsa-native, Apache-2.0 or ISC or MIT; texts in tom_secrets_manager/licenses/) |
+| Tom Secrets Manager.app (darwin-arm64; tsm and the service inside) | tom_secrets_app | https://github.com/al-the-bear/tom_app_secrets_manager | BSD 3-Clause (third-party notices in the app: THIRD_PARTY.md) |
 | marktext (launcher script)      | -                           | this repository                                    | BSD 3-Clause (below) |
 
 Each program also contains the code of the packages it depends on (for

@@ -40,6 +40,16 @@ clones it). `npm run binaries:report` in the extension says, per platform,
 which binaries are older than the sources. See
 `tom_ai/vscode/tom_vscode_extension/README.md` § Private distribution.
 
+The Tom Secrets Manager (from `app_secrets_manager/tom_secrets_build`'s
+`ci.sh :release` of the platform's host; macOS so far, Linux and Windows to
+follow):
+
+| Path | What |
+| ---- | ---- |
+| `tom_secrets_manager/` | the tools for a server: `bin/tsm`, `bin/tom_secrets_service`, `lib/` (tom_pqc's native library, which the service loads), `LICENSE`, `THIRD_PARTY.md`, `licenses/` |
+| `tsm` | a link to `tom_secrets_manager/bin/tsm`, so `tsm` is on the PATH and still finds the service beside its real path |
+| `Tom Secrets Manager.app` | the desktop app (darwin-arm64, ad-hoc signed), `tsm` and the service inside it (`Contents/Resources/tsm`) |
+
 ## The VS Code extension as a download
 
 The latest VSIX of the extension is not committed here (GitHub refuses files

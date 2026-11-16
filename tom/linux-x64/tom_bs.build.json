@@ -2,12 +2,12 @@
   "format": "tom-bs-build",
   "formatVersion": 1,
   "platform": "linux-x64",
-  "builtAt": "2026-11-11T17:58:06.023Z",
-  "publishedAt": "2026-11-11T17:59:15.462Z",
+  "builtAt": "2026-11-16T16:39:39.162Z",
+  "publishedAt": "2026-11-16T16:41:18.448Z",
   "version": "1.0.0",
-  "build": 47,
-  "commit": "14e2a1b",
-  "versionerTime": "2026-11-11T17:58:06.023715Z",
+  "build": 50,
+  "commit": "bfa14f4a",
+  "versionerTime": "2026-11-16T16:39:39.162642Z",
   "dart": "3.13.7",
-  "bridgeSourceHash": "bebf52def46a7f42b7ef402ecd571176740e4ad3f7eb2354bc364a59ea8582d0"
+  "bridgeSourceHash": "1f32862f7b89fe14f3a8e599cc9d7136e04d12ea142e1b58722aed3b9b2bc04c"
 }

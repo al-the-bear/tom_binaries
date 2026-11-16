@@ -2,11 +2,11 @@
   "format": "validate-codespecs-build",
   "formatVersion": 1,
   "platform": "win32-x64",
-  "builtAt": "2026-11-11T17:40:58.252Z",
-  "sourceHash": "0a8288359dd7430689733130ba5681ecd2565f8b3a93a9655e5281b601ffb648",
-  "sourceFiles": 293,
+  "builtAt": "2026-11-16T16:51:16.848Z",
+  "sourceHash": "aa1b97c0b50bd4f8675ca17cd5e1122a0e4be9cf9f18a95e935ab77ec805028d",
+  "sourceFiles": 314,
   "clitool": {
-    "head": "b6848658abd01bbb40c9180a53d0bea7357870f7",
+    "head": "21d6733563d22be0249759826bdf2c68607bb006",
     "dirty": false
   }
 }

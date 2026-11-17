@@ -1,0 +1,10 @@
+{
+  "file": "ai_merge_drivers.cjs",
+  "sourceHash": "5aeaee62e4b076b3fb14b3b854e5d7a45374209641a7c8a6e4bfd067571751ec",
+  "source": "al_the_bear/.claude/skills/_lib/merge_drivers/ts",
+  "commit": "874ca17",
+  "builtAt": "2026-11-17T14:12:51Z",
+  "node": "v22.22.3",
+  "yaml": "2.8.4",
+  "api": 1
+}

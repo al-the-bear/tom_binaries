@@ -3,8 +3,8 @@
   "formatVersion": 1,
   "project": "tom_ai/devops/tom_issue_kit",
   "buildkit": "1.30.13",
-  "fingerprint": "98c66edd03959d089b479e50648f199efc38f7e5baa7bdecf3a33163d3aa27a9",
-  "builtAt": "2026-11-17T09:06:01.410495Z",
-  "size": 8523728,
-  "sha256": "fe6bb4ed476a06caeaa36569dc3afafee36b332ddcb12e9719de99e1632bf9c2"
+  "fingerprint": "d0a48ef25a31f98bcb56eaaa248995b7d314713c0aee90e0be03532ab6eaee0d",
+  "builtAt": "2026-11-17T09:29:23.244778Z",
+  "size": 8556752,
+  "sha256": "bf18b36ba7ebe543c41046b9a7af757764c933f8084f7c8aff5b62b26124e07e"
 }

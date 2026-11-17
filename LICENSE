@@ -14,7 +14,7 @@ still applies to the binary as stated.
 
 | Binary (tom/<platform>/)        | Package                     | Source repository                                  | Licence      |
 | ------------------------------- | --------------------------- | -------------------------------------------------- | ------------ |
-| buildkit, bk, findproject       | tom_build_kit               | https://github.com/al-the-bear/tom_basics          | BSD 3-Clause |
+| buildkit, bk, findproject, wssetup | tom_build_kit             | https://github.com/al-the-bear/tom_basics          | BSD 3-Clause |
 | testkit, tk                     | tom_test_kit                | https://github.com/al-the-bear/tom_devops          | BSD 3-Clause |
 | issuekit, ik                    | tom_issue_kit               | https://github.com/al-the-bear/tom_devops          | BSD 3-Clause |
 | tom                             | tom_build_cli               | https://github.com/al-the-bear/tom_devops          | BSD 3-Clause |

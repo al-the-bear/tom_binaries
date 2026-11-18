@@ -83,6 +83,26 @@ Version `0.1.9`, extracted from the upstream `*-loadable-*` release tarballs.
 The upstream licence texts (MIT or Apache-2.0, at the user's choice) are in
 `sqlite_vec/LICENSE-MIT` and `sqlite_vec/LICENSE-APACHE`.
 
+## PDFium
+
+The PDF editor of the office/PDF prototype (Tom Forge) loads PDFium over FFI
+from here:
+
+```
+pdfium/
+└── darwin-arm64/
+    ├── libpdfium.dylib        # ad-hoc signed (codesign -s -) when taken in
+    ├── LICENSE                # the pdfium-binaries build scripts (MIT)
+    ├── licenses/              # PDFium (BSD 3-Clause) and its third-party code
+    └── pdfium.version.json    # release tag, the archive's SHA-256, date taken in
+```
+
+The library is the [pdfium-binaries](https://github.com/bblanchon/pdfium-binaries)
+release `chromium/8152` (PDFium 159.0.8152.0), asset `pdfium-mac-arm64.tgz`,
+the variant without V8 and XFA. Taking in a new release replaces the dylib,
+`LICENSE`, `licenses/` and the version file together, re-signs the dylib, and
+goes with new bindings in the package that uses it.
+
 ## What may go in
 
 The rule (DP-204 (c) of the Tom Secrets Manager idea, 2026-11-12): a binary

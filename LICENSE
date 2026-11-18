@@ -40,6 +40,17 @@ sqlite_vec/ holds the loadable extension of sqlite-vec by Alex Garcia
 (https://github.com/asg017/sqlite-vec), dual-licensed MIT or Apache-2.0; the
 licence texts are in sqlite_vec/LICENSE-MIT and sqlite_vec/LICENSE-APACHE.
 
+pdfium/<platform>/ holds PDFium as built by the pdfium-binaries project
+(https://github.com/bblanchon/pdfium-binaries; PDFium itself:
+https://pdfium.googlesource.com/pdfium), the variant without V8 and XFA.
+PDFium is BSD 3-Clause; the third-party code built into it (FreeType,
+HarfBuzz, ICU, libjpeg-turbo, OpenJPEG, libpng, zlib, lcms2, abseil, ...) is
+under permissive licences; the pdfium-binaries build scripts are MIT. The texts
+travel with the library: pdfium/<platform>/LICENSE (the build scripts) and
+pdfium/<platform>/licenses/ (PDFium and every third-party component). The
+release, the archive's SHA-256 and the date taken in are in
+pdfium/<platform>/pdfium.version.json.
+
 The scripts of this repository (the *_pull_executables, commit_and_push and
 marktext launcher scripts) are licensed under the BSD 3-Clause licence:
 

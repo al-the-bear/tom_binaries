@@ -1,0 +1,14 @@
+{
+  "project": "pdfium-binaries",
+  "repository": "https://github.com/bblanchon/pdfium-binaries",
+  "tag": "chromium/8152",
+  "pdfium_version": "159.0.8152.0",
+  "asset": "pdfium-mac-arm64.tgz",
+  "asset_url": "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium/8152/pdfium-mac-arm64.tgz",
+  "asset_sha256": "30b0c3f55448840f0947b54bedbe35185bbaccbadd35b8cd960270d6fa6caf80",
+  "build": "is_debug=false pdf_enable_v8=false pdf_enable_xfa=false target_cpu=arm64 target_os=mac",
+  "release_published": "2026-11-10",
+  "taken_in": "2026-11-18",
+  "signing": "ad-hoc re-signed with codesign -s - -f when taken in (DPPF-5); the upstream dylib is only linker-signed",
+  "licence": "BSD-3-Clause (PDFium) with permissive third-party licences, build scripts MIT; see LICENSE"
+}

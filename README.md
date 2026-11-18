@@ -50,6 +50,14 @@ follow):
 | `tsm` | a link to `tom_secrets_manager/bin/tsm`, so `tsm` is on the PATH and still finds the service beside its real path |
 | `Tom Secrets Manager.app` | the desktop app (darwin-arm64, ad-hoc signed), `tsm` and the service inside it (`Contents/Resources/tsm`) |
 
+The office editors' LibreOfficeKit helper (from
+`tom_ai/modules/tom_office_host`'s `buildkit :compiler`; darwin-arm64):
+
+| Path | What |
+| ---- | ---- |
+| `tom_office_host` | the helper the office editor starts, one per document (protocol 1 on stdin and stdout); ad-hoc signed |
+| `libtom_office_host_lok.dylib` | its C trampoline, loaded from beside the executable; ad-hoc signed |
+
 ## The VS Code extension as a download
 
 The latest VSIX of the extension is not committed here (GitHub refuses files

@@ -1,0 +1,10 @@
+{
+  "format": "buildkit-output",
+  "formatVersion": 1,
+  "project": "tom_ai/distributed/tom_process_monitor_tool",
+  "buildkit": "1.37.0",
+  "fingerprint": "ca0db873c85420675ed5ea4400dee93855ce57e681bcb1485446394bc0c45961",
+  "builtAt": "2026-11-19T16:14:45.562517Z",
+  "size": 8839808,
+  "sha256": "0f6797d2a5fe8b7f5dc1c072c97130540d107c0870e895804283039a14f50758"
+}

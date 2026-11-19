@@ -1,0 +1,10 @@
+{
+  "format": "buildkit-output",
+  "formatVersion": 1,
+  "project": "tom_ai/reflection/tom_reflection_generator",
+  "buildkit": "1.37.0",
+  "fingerprint": "61c1ce51dfc57b43385bd529b728d0c103a92bcc1f42004bc232aec7b42de132",
+  "builtAt": "2026-11-19T20:13:57.878335Z",
+  "size": 19987456,
+  "sha256": "9d528336d6e5ea4137443e020dbc853d9ecc5fdf761665b3917116b865cb87df"
+}

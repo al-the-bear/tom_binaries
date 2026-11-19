@@ -2,11 +2,11 @@
   "format": "validate-codespecs-build",
   "formatVersion": 1,
   "platform": "darwin-arm64",
-  "builtAt": "2026-11-18T18:20:29.947Z",
-  "sourceHash": "f2f2dbdc914d5d601667dddd8d9d341f67e29b36687c0c9754b69bdf7cb39da4",
-  "sourceFiles": 340,
+  "builtAt": "2026-11-19T11:14:16.563Z",
+  "sourceHash": "6891d76cba4fd9ac1252293cb54a4bf0f82d4db583d19190edf905b772107005",
+  "sourceFiles": 342,
   "clitool": {
-    "head": "cd84f55d79e541423d8891301b8869034ce2a9b5",
+    "head": "7ed2ab5674097a413bf8897f2c401b1b01930dae",
     "dirty": false
   }
 }

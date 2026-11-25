@@ -7673,6 +7673,216 @@ function mergeHistoryMd(sides) {
   return { status: "merged", text: serialise2(oursFirst ? o.meta : t.meta, summary, turns) };
 }
 
+// src/drivers/mdSections.ts
+var HEADING = /^## /;
+var FENCE = /^\s{0,3}(```+|~~~+)/;
+var DATE = /\b(\d{4}-\d{2}-\d{2})\b/;
+function splitSections(text) {
+  const lines = text.split("\n");
+  const out = [];
+  let current = [];
+  let heading = "";
+  let fence;
+  const counts = /* @__PURE__ */ new Map();
+  const flush = () => {
+    if (heading === "" && current.length === 0) {
+      return;
+    }
+    const n = counts.get(heading) ?? 0;
+    counts.set(heading, n + 1);
+    let gap = 0;
+    while (current.length && current[current.length - 1].trim() === "") {
+      current.pop();
+      gap++;
+    }
+    out.push({ key: n === 0 ? heading : `${heading}\0${n}`, heading, text: current.join("\n"), gap, last: false });
+  };
+  for (const line of lines) {
+    const f = FENCE.exec(line);
+    if (f) {
+      const mark = f[1][0];
+      if (fence === void 0) {
+        fence = mark;
+      } else if (fence === mark) {
+        fence = void 0;
+      }
+    }
+    if (fence === void 0 && !f && HEADING.test(line)) {
+      flush();
+      heading = line.trimEnd();
+      current = [line];
+      continue;
+    }
+    current.push(line);
+  }
+  flush();
+  if (out.length) {
+    out[out.length - 1].last = true;
+  }
+  return out;
+}
+function lcs(a, b) {
+  const n = a.length;
+  const m = b.length;
+  const t = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i2 = n - 1; i2 >= 0; i2--) {
+    for (let j2 = m - 1; j2 >= 0; j2--) {
+      t[i2][j2] = a[i2] === b[j2] ? t[i2 + 1][j2 + 1] + 1 : Math.max(t[i2 + 1][j2], t[i2][j2 + 1]);
+    }
+  }
+  const pairs = [];
+  let i = 0;
+  let j = 0;
+  while (i < n && j < m) {
+    if (a[i] === b[j]) {
+      pairs.push([i, j]);
+      i++;
+      j++;
+    } else if (t[i + 1][j] >= t[i][j + 1]) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+  return pairs;
+}
+var same = (x, y) => x.length === y.length && x.every((v, i) => v === y[i]);
+function merge3(base, ours, theirs, marker = 7) {
+  const mo = new Map(lcs(base, ours));
+  const mt = new Map(lcs(base, theirs));
+  const out = [];
+  let conflict = false;
+  let ib = 0;
+  let io = 0;
+  let it = 0;
+  const chunk = (eb, eo, et) => {
+    const b = base.slice(ib, eb);
+    const o = ours.slice(io, eo);
+    const t = theirs.slice(it, et);
+    if (same(o, b)) {
+      out.push(...t);
+    } else if (same(t, b) || same(o, t)) {
+      out.push(...o);
+    } else {
+      conflict = true;
+      out.push("<".repeat(marker) + " ours", ...o, "=".repeat(marker), ...t, ">".repeat(marker) + " theirs");
+    }
+  };
+  for (let k = 0; k < base.length; k++) {
+    const ko = mo.get(k);
+    const kt = mt.get(k);
+    if (ko === void 0 || kt === void 0 || ko < io || kt < it) {
+      continue;
+    }
+    chunk(k, ko, kt);
+    out.push(base[k]);
+    ib = k + 1;
+    io = ko + 1;
+    it = kt + 1;
+  }
+  chunk(base.length, ours.length, theirs.length);
+  return { lines: out, conflict };
+}
+function mergeSection(base, ours, theirs, marker) {
+  const b = base?.text;
+  const o = ours?.text;
+  const t = theirs?.text;
+  if (o === t) {
+    return { text: o, conflict: false };
+  }
+  if (o === b) {
+    return { text: t, conflict: false };
+  }
+  if (t === b) {
+    return { text: o, conflict: false };
+  }
+  const r = merge3((b ?? "").split("\n"), o === void 0 ? [] : o.split("\n"), t === void 0 ? [] : t.split("\n"), marker);
+  return { text: r.lines.join("\n"), conflict: r.conflict };
+}
+function dateOf(heading) {
+  return DATE.exec(heading)?.[1];
+}
+function mergeMdSectionTexts(ancestor, ours, theirs, progress, marker = 7) {
+  const endsNl = ours.endsWith("\n") || ours === "" && theirs.endsWith("\n");
+  const strip = (s) => s.endsWith("\n") ? s.slice(0, -1) : s;
+  const B = new Map(splitSections(strip(ancestor)).map((s) => [s.key, s]));
+  const O = splitSections(strip(ours));
+  const T = splitSections(strip(theirs));
+  const Om = new Map(O.map((s) => [s.key, s]));
+  const Tm = new Map(T.map((s) => [s.key, s]));
+  const order = O.map((s) => s.key);
+  let after;
+  for (const s of T) {
+    if (!Om.has(s.key) && !B.has(s.key)) {
+      let at = after === void 0 ? order[0] === "" ? 1 : 0 : order.indexOf(after) + 1;
+      while (at < order.length && Om.has(order[at]) && !B.has(order[at]) && !Tm.has(order[at])) {
+        at++;
+      }
+      order.splice(at, 0, s.key);
+    }
+    if (order.includes(s.key)) {
+      after = s.key;
+    }
+  }
+  for (const s of T) {
+    if (!order.includes(s.key)) {
+      const prev = T[T.indexOf(s) - 1];
+      const at = prev && order.includes(prev.key) ? order.indexOf(prev.key) + 1 : order.length;
+      order.splice(at, 0, s.key);
+    }
+  }
+  let conflict = false;
+  let parts = [];
+  for (const key of order) {
+    const r = mergeSection(B.get(key), Om.get(key), Tm.get(key), marker);
+    if (r.text === void 0) {
+      continue;
+    }
+    if (r.conflict) {
+      conflict = true;
+    }
+    const src = Om.get(key) ?? Tm.get(key) ?? B.get(key);
+    parts.push({ key, heading: src.heading, text: r.text, gap: src.gap, last: src.last });
+  }
+  if (progress) {
+    const isNew3 = (p) => !B.has(p.key);
+    const fresh = parts.filter((p) => isNew3(p) && dateOf(p.heading) !== void 0).map((p, i) => ({ p, i })).sort((x, y) => dateOf(y.p.heading) < dateOf(x.p.heading) ? -1 : dateOf(y.p.heading) > dateOf(x.p.heading) ? 1 : x.i - y.i).map((x) => x.p);
+    if (fresh.length) {
+      const rest = parts.filter((p) => !fresh.includes(p));
+      let at = rest.findIndex((p) => !isNew3(p) && dateOf(p.heading) !== void 0);
+      if (at < 0) {
+        at = rest.length;
+      }
+      parts = [...rest.slice(0, at), ...fresh, ...rest.slice(at)];
+    }
+  }
+  const kept = parts.filter((p) => p.text !== "");
+  let text = "";
+  kept.forEach((p, i) => {
+    text += p.text;
+    if (i < kept.length - 1) {
+      text += "\n".repeat((p.last ? Math.max(1, p.gap) : p.gap) + 1);
+    } else if (p.last && endsNl) {
+      text += "\n".repeat(p.gap);
+    }
+  });
+  if (endsNl && text !== "") {
+    text += "\n";
+  }
+  return { text, conflict };
+}
+function mergeMdSections(sides) {
+  const ours = sides.ours ?? "";
+  const theirs = sides.theirs ?? "";
+  if (sides.ours === void 0 && sides.theirs === void 0) {
+    return { status: "keep" };
+  }
+  const name = (sides.display ?? "").replace(/\\/g, "/").split("/").pop() ?? "";
+  const progress = /^progress\./.test(name);
+  const r = mergeMdSectionTexts(sides.ancestor ?? "", ours, theirs, progress);
+  return r.conflict ? { status: "conflicted", text: r.text } : { status: "merged", text: r.text };
+}
+
 // src/drivers/trail.ts
 var SUMMARY_HEADER2 = /^=== (PROMPT|ANSWER) (\S+) (\S+) (\d+) ===\s*$/u;
 var LIVETRAIL_HEADER = /^## \u{1F680} PROMPT (\d{8}_\d{6})(?![\p{L}\p{N}_])/u;
@@ -7985,7 +8195,8 @@ var AI_MERGE_DRIVERS = {
   "ai-block-history": mergeBlockHistory,
   "ai-trail": mergeTrail,
   "ai-history-json": mergeHistoryJson,
-  "ai-history-md": mergeHistoryMd
+  "ai-history-md": mergeHistoryMd,
+  "ai-md-sections": mergeMdSections
 };
 var AI_MERGE_DRIVER_NAMES = Object.keys(AI_MERGE_DRIVERS);
 var AI_MERGE_DRIVER_TITLES = {
@@ -7993,7 +8204,8 @@ var AI_MERGE_DRIVER_TITLES = {
   "ai-block-history": "AI compacted_history.md block merge",
   "ai-trail": "AI trail block/timestamp merge",
   "ai-history-json": "AI history.json timestamp merge",
-  "ai-history-md": "AI history.md timestamp merge"
+  "ai-history-md": "AI history.md timestamp merge",
+  "ai-md-sections": "AI Markdown merge by ## section"
 };
 function isAiMergeDriver(name) {
   return Object.prototype.hasOwnProperty.call(AI_MERGE_DRIVERS, name);
@@ -8015,16 +8227,16 @@ function runMergeDriverOnFiles(driver, ancestor, ours, theirs, display = "") {
   if (outcome.status === "fail") {
     return { code: 1, message: outcome.message };
   }
-  if (outcome.status === "merged") {
+  if (outcome.status === "merged" || outcome.status === "conflicted") {
     fs.writeFileSync(ours, outcome.text, "utf8");
   }
-  return { code: 0 };
+  return outcome.status === "conflicted" ? { code: 1, message: `${display}: sections changed on both sides - conflict markers written` } : { code: 0 };
 }
 function makeBuiltinMerger() {
   return (driver, target, legacy) => {
     const ours = readIf(target);
     const outcome = mergeWith(driver, { ancestor: "", ours, theirs: readIf(legacy), display: target });
-    if (outcome.status === "fail") {
+    if (outcome.status === "fail" || outcome.status === "conflicted") {
       return void 0;
     }
     return outcome.status === "merged" ? outcome.text : ours ?? "";

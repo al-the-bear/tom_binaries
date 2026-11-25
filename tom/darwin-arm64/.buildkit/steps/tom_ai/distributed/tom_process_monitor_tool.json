@@ -1,0 +1,8 @@
+{
+  "compiler": {
+    "fingerprint": "a8723aa49c504cff978603714152d75f7a9b2339dede1d75129d89f482910ea0",
+    "outputs": [
+      "darwin-arm64/process_monitor"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "compiler": {
+    "fingerprint": "b895fd8a0ff17957a73eabc629d5a3f7998588a253a7bd48e45efa3cbbeeaf88",
+    "outputs": [
+      "darwin-arm64/ledger_server"
+    ]
+  }
+}

@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/distributed/tom_dist_ledger_tool",
-  "buildkit": "1.39.1",
-  "fingerprint": "ad89e489444ecbd2c0ab8d2a3e36d23b9a23492729df779d16e3994e3b2c9039",
-  "builtAt": "2026-11-25T07:00:30.630381Z",
+  "buildkit": "1.40.1",
+  "fingerprint": "b895fd8a0ff17957a73eabc629d5a3f7998588a253a7bd48e45efa3cbbeeaf88",
+  "builtAt": "2026-11-25T12:33:07.150127Z",
   "size": 7813712,
-  "sha256": "74052fcafb0e1f793134a7b01484553e44be4eda2f2b0f211e815631f8892bbe"
+  "sha256": "d27d4f62df28d2bed9d3d9bedfa78594a2cac80f3a6b94ee8575c605b48dd5cf"
 }

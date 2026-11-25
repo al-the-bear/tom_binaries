@@ -1,0 +1,9 @@
+{
+  "compiler": {
+    "fingerprint": "c9e730fadc69eecdebbee0164cd3141287375bdd3462201ee09e3de24fc74aa2",
+    "outputs": [
+      "darwin-arm64/reflector",
+      "darwin-arm64/reflection_analyzer"
+    ]
+  }
+}

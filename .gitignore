@@ -25,3 +25,16 @@ tom/*/d4rtrun.b.exe
 tom/*/dart_editor_bundler
 tom/*/dart_editor_bundler.exe
 tom/*/dart_editor_bundler.buildkit.json
+
+# Every binary of the full build that is no release binary
+# (`buildkit :skill-build-all-binaries`, buildkit_ws_commands.md § 1.9): built
+# to check that everything compiles, never committed. The release binaries are
+# tom/<platform>/ (`buildkit :skill-build-binaries --list`).
+/all/
+
+# What :skill-build-binaries' self-swap leaves: the running binary set aside
+# (<name>.old, deleted by the next run) and a compile that did not finish
+# (<name>.new).
+tom/*/*.old
+tom/*/*.old.*
+tom/*/*.new

@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/devops/tom_issue_kit",
-  "buildkit": "1.37.0",
-  "fingerprint": "696ec7ba123719c9b104c3be1532371d6ba1a35d34e075b84a77b68aa50947db",
-  "builtAt": "2026-11-19T16:14:23.295966Z",
-  "size": 9184824,
-  "sha256": "560821667281098efe698172d3448fe3730929b647c3faf4c9818d9b74ba1682"
+  "buildkit": "1.41.0",
+  "fingerprint": "4285fd7d5ad8934f31fa831159f7f3d7e0b75f3ba540367d582ed5898ed389e9",
+  "builtAt": "2026-11-26T09:00:27.985455Z",
+  "size": 9249408,
+  "sha256": "ebea3141c73c180bcdcdfbaef5a3edb20a112c13867402cac04bf51ef5ad74aa"
 }

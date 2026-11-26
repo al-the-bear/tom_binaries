@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/vscode/tom_vscode_bridge",
-  "buildkit": "1.37.0",
-  "fingerprint": "7da047df9715d0dbab3cb925335bf6c92687ece0e0a0cdd1b48271cb278f72c4",
-  "builtAt": "2026-11-19T19:36:33.658207Z",
-  "size": 21965800,
-  "sha256": "dc205901d60db242e5fcfde7a753fc524470fe7e02fbcf4fb97d05b6854e9132"
+  "buildkit": "1.41.0",
+  "fingerprint": "a8b615934b9faa7051d409e562e748199e05850252f3ff5573c9d382b3718ea1",
+  "builtAt": "2026-11-26T09:03:19.255441Z",
+  "size": 22087032,
+  "sha256": "60810127777eda32bba1a4526863f88a18e89eb542734bdeb91936a6eebcd1de"
 }

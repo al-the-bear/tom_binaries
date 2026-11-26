@@ -1,0 +1,8 @@
+{
+  "compiler": {
+    "fingerprint": "0255b73301402fb3e878710c1bf4957259ae9a087e008b84966d727b9dfbce75",
+    "outputs": [
+      "win32-x64/process_monitor.exe"
+    ]
+  }
+}

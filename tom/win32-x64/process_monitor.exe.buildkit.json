@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/distributed/tom_process_monitor_tool",
-  "buildkit": "1.37.0",
-  "fingerprint": "4248fb2c102e5655542e0b25ca94de899fb0233b59c3f29354e58c8231613bf7",
-  "builtAt": "2026-11-19T20:18:05.806647Z",
-  "size": 8459776,
-  "sha256": "53e6f6bc02ca4298c481e113299296912ae057a42d1853521b7425b5da6b671e"
+  "buildkit": "1.41.0",
+  "fingerprint": "0255b73301402fb3e878710c1bf4957259ae9a087e008b84966d727b9dfbce75",
+  "builtAt": "2026-11-26T09:01:14.591960Z",
+  "size": 8522240,
+  "sha256": "33c51f13c6784d1a1823c968bac6da2cb162a28448b27d6cbb40b8e0eb2c0643"
 }

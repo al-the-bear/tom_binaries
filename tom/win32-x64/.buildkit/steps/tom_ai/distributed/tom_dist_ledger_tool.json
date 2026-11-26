@@ -1,0 +1,8 @@
+{
+  "compiler": {
+    "fingerprint": "4105385b7e6a034f5a6c65d64a41622c0094e84e3361a9d3a469b61b32588c4d",
+    "outputs": [
+      "win32-x64/ledger_server.exe"
+    ]
+  }
+}

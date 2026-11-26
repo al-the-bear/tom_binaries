@@ -1,0 +1,9 @@
+{
+  "compiler": {
+    "fingerprint": "a39a44bd0d0be1259cb0d43ea3cb616aa110d784168293a377511a29880e2228",
+    "outputs": [
+      "linux-x64/reflector",
+      "linux-x64/reflection_analyzer"
+    ]
+  }
+}

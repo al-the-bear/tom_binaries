@@ -1,0 +1,8 @@
+{
+  "compiler": {
+    "fingerprint": "dc36bc8aa77becd8375704a346b6d829f4571599e01ad1889c15587433eea8cb",
+    "outputs": [
+      "linux-x64/process_monitor"
+    ]
+  }
+}

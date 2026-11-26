@@ -3,8 +3,8 @@
   "formatVersion": 1,
   "project": "tom_ai/d4rt/tom_d4rt_dcli",
   "buildkit": "1.40.1",
-  "fingerprint": "656792c5b51f033684a5e4eb9df3acee17e35290036494241cf0c06873f50cdf",
-  "builtAt": "2026-11-25T16:36:09.080667Z",
-  "size": 23037760,
-  "sha256": "626031347769e3038e753cbff447ee40c8d2e9ddeb39c4d643b07f6b70f985bc"
+  "fingerprint": "967c4db7831e69d2936bf35df1b8a17851112917667210b5d1a707073de84890",
+  "builtAt": "2026-11-26T09:17:17.567141Z",
+  "size": 22988224,
+  "sha256": "36c7e8e81b38b16b8f931485cf4b9a31bb6838ec8e162a202505876c66fd4733"
 }

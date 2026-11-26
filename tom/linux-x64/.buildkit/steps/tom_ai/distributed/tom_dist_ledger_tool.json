@@ -1,0 +1,8 @@
+{
+  "compiler": {
+    "fingerprint": "b951bf82510d57122b838b7a3a447a17e070f0de701aa9ef2ca244743d8bddfd",
+    "outputs": [
+      "linux-x64/ledger_server"
+    ]
+  }
+}

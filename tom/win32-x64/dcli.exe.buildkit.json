@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/d4rt/tom_d4rt_dcli",
-  "buildkit": "1.37.0",
-  "fingerprint": "c6672ca6777294a5acc9f54810237d2d299ea1e6156199b8744830a0a8f21b73",
-  "builtAt": "2026-11-19T22:16:13.361132Z",
-  "size": 21879808,
-  "sha256": "a649fad885adfa718b0b9b0814d6b635e15f839e08b29ef2b9c74227a66a5851"
+  "buildkit": "1.41.0",
+  "fingerprint": "02ee1b73cd89ba994ccc0a1e3ca77667600fbfeb7b54165761d250d623106647",
+  "builtAt": "2026-11-26T09:02:50.690584Z",
+  "size": 21985280,
+  "sha256": "1f9ae9b3f1dd0e7fb3d403701db5c35c3f15f56808f43a71f47a3deef1da346b"
 }

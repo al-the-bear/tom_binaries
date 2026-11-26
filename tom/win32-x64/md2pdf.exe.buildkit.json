@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/devops/tom_md2pdf",
-  "buildkit": "1.37.0",
-  "fingerprint": "d97f63a8ea70ea7f54d6cccb6d304b79bce27c07df27970af02397db72950961",
-  "builtAt": "2026-11-19T20:17:39.472637Z",
+  "buildkit": "1.41.0",
+  "fingerprint": "5cf34028e6dcb21c288116eea920bd6c2b4450ed9fc1fa3522022d76a8328fc2",
+  "builtAt": "2026-11-26T09:01:02.608904Z",
   "size": 10667008,
   "sha256": "0f067c9c572e20806c21cca14795ba0c2d3a80ae0a0213ffff6775aaf9cfa7c9"
 }

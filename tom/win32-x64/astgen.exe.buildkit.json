@@ -2,9 +2,9 @@
   "format": "buildkit-output",
   "formatVersion": 1,
   "project": "tom_ai/d4rt/tom_ast_generator",
-  "buildkit": "1.37.0",
-  "fingerprint": "632a59cb2f965f2db1bf8b84a5e52d1bf8ead3d5568c6d196212f4a484f2e5c3",
-  "builtAt": "2026-11-19T20:15:46.980037Z",
-  "size": 19394048,
-  "sha256": "e986fe4d589cc9d5cf66dd63562ef3d65456a53b21f2601020c285e64ae5ef18"
+  "buildkit": "1.41.0",
+  "fingerprint": "8717a909c76f991b1c9999da364e27a6a3200c82662990a42260735ecafd94da",
+  "builtAt": "2026-11-26T09:00:23.421292Z",
+  "size": 19456512,
+  "sha256": "9143e5ac36c9e49221df635940f74b55f2620d39c7a09e12509dadc0992dcf47"
 }

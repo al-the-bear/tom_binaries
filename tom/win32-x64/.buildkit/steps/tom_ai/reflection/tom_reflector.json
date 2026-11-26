@@ -1,0 +1,9 @@
+{
+  "compiler": {
+    "fingerprint": "6a4c4d820840847e0c539ddf6a13c282198b22dbed6b513231810d1a57e58e07",
+    "outputs": [
+      "win32-x64/reflector.exe",
+      "win32-x64/reflection_analyzer.exe"
+    ]
+  }
+}
